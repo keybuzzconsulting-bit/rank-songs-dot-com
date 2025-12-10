@@ -4,6 +4,28 @@
   <meta charset="UTF-8" />
   <title>🔥 NF Songs Ranked | Fan Top 20 Leaderboard</title>
 
+  <!-- ============================================================
+       IMPORTANT ANALYTICS & VERIFICATION SETUP — DO NOT ERASE
+       ------------------------------------------------------------
+       This page uses:
+       • Google Tag Manager: GTM-NGW77446
+       • Google Analytics 4 (loaded via GTM, Measurement ID G-3KDW9CM0B8)
+       • Google Search Console (site verification)
+       • Google AdSense (monetization)
+
+       Removing or editing these tags can break:
+       • Traffic & engagement tracking
+       • Search Console ownership verification
+       • Ad delivery and reporting
+
+       If you ever redesign this page:
+       • Leave this block, the GTM script + noscript,
+         the GSC meta, and the AdSense script in place.
+       ============================================================ -->
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="jky8KPU5T5SdAvfQvD9jJtc0lVgI4A9zMPrl9F9CRFs" />
+
   <!-- Google Tag Manager (GTM) – loads GA4 and other pixels via container -->
   <script>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -41,18 +63,24 @@
   <!-- Google AdSense (Auto ads) – live publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2177244564929875" crossorigin="anonymous"></script>
 
-  <!-- JSON-LD: WebPage + MusicGroup + ItemList + BreadcrumbList -->
+  <!-- JSON-LD: Organization + WebSite + WebPage + MusicGroup + ItemList + BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": "https://ranksongs.com/nf_ranks.html#webpage",
-        "url": "https://ranksongs.com/nf_ranks.html",
-        "name": "NF Songs Ranked | Fan Top 20 Leaderboard",
-        "description": "Fans rank NF’s best songs and see the global Top 20 leaderboard in real time.",
-        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://ranksongs.com/NF%20SONG%20RANKS%20WALLPAPER.jpg" }
+        "@type": "Organization",
+        "@id": "https://ranksongs.com/#organization",
+        "name": "RankSongs",
+        "url": "https://ranksongs.com/",
+        "logo": "https://ranksongs.com/favicon.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ranksongs.com/#website",
+        "url": "https://ranksongs.com/",
+        "name": "RankSongs",
+        "publisher": { "@id": "https://ranksongs.com/#organization" }
       },
       {
         "@type": "MusicGroup",
@@ -60,19 +88,44 @@
         "name": "NF"
       },
       {
+        "@type": "WebPage",
+        "@id": "https://ranksongs.com/nf_ranks.html#webpage",
+        "url": "https://ranksongs.com/nf_ranks.html",
+        "name": "NF Songs Ranked | Fan Top 20 Leaderboard",
+        "description": "Fans rank NF’s best songs and see the global Top 20 leaderboard in real time.",
+        "isPartOf": { "@id": "https://ranksongs.com/#website" },
+        "about": { "@id": "https://ranksongs.com/nf_ranks.html#artist" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://ranksongs.com/NF%20SONG%20RANKS%20WALLPAPER.jpg"
+        },
+        "breadcrumb": { "@id": "https://ranksongs.com/nf_ranks.html#breadcrumbs" }
+      },
+      {
         "@type": "ItemList",
         "@id": "https://ranksongs.com/nf_ranks.html#toplist",
         "name": "NF Songs Ranked",
         "itemListOrder": "Descending",
         "numberOfItems": 20,
-        "about": { "@id": "https://ranksongs.com/nf_ranks.html#artist" }
+        "about": { "@id": "https://ranksongs.com/nf_ranks.html#artist" },
+        "mainEntityOfPage": { "@id": "https://ranksongs.com/nf_ranks.html#webpage" }
       },
       {
         "@type": "BreadcrumbList",
         "@id": "https://ranksongs.com/nf_ranks.html#breadcrumbs",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ranksongs.com/index.html" },
-          { "@type": "ListItem", "position": 2, "name": "NF Songs Ranked", "item": "https://ranksongs.com/nf_ranks.html" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ranksongs.com/index.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "NF Songs Ranked",
+            "item": "https://ranksongs.com/nf_ranks.html"
+          }
         ]
       }
     ]
@@ -259,12 +312,12 @@
     #rankedList {
       width: 100%;
       max-width: 100%;
-      min-height: 600px; /* Ensure consistent height */
+      min-height: 600px;
     }
     
     #songList {
       width: 48%; 
-      height: 1556px; /* Matches rankedColumn: padding(40px) + 20 boxes(1200px) + gaps(228px) + section gap(12px) + margin(20px) + buttons(56px) = 1556px */
+      height: 1556px;
       overflow-y: auto;
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(20px);
@@ -371,12 +424,10 @@
       border-radius: 20px;
       padding: 20px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      /* Remove fixed height to allow natural scrolling */
     }
     
     #rankedList {
       flex: 1;
-      /* Remove overflow-y: auto to allow natural page scrolling */
     }
     
     .rank-box { 
@@ -391,7 +442,6 @@
       min-height: 60px;
       position: relative;
       overflow: hidden;
-      /* margin-bottom: 8px; Removed - using gap instead */
     }
     
     .rank-box.filled {
@@ -547,7 +597,6 @@
       color: #fff;
       padding: 10px;
     }
-    /* Mobile-specific improvements for dropdowns */
     @media (max-width: 768px) {
       #dropdownContainer select { 
         width: 95%; 
@@ -671,7 +720,6 @@
       box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     }
 
-    /* Global rankings table (scrollable body) */
     #globalRankingsTable {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
@@ -741,36 +789,36 @@
       }
       
       #container {
-        flex-direction: row; /* Keep side by side */
+        flex-direction: row;
         align-items: flex-start;
-        gap: 8px; /* Reduced gap */
+        gap: 8px;
         max-width: 100%;
         width: 100%;
       }
       
       #songList, #rankedColumn {
-        width: 48%; /* Keep 48% each */
+        width: 48%;
         min-width: 0;
         max-width: 48%;
       }
       
       #songList {
-        height: 1400px; /* Adjusted height */
-        padding: 12px; /* Reduced padding */
+        height: 1400px;
+        padding: 12px;
       }
       
       #rankedColumn {
-        padding: 12px; /* Reduced padding */
+        padding: 12px;
       }
       
       .song-item {
-        padding: 12px 14px; /* Reduced padding */
-        font-size: 13px; /* Smaller font */
+        padding: 12px 14px;
+        font-size: 13px;
       }
       
       .rank-box {
-        padding: 12px 14px; /* Reduced padding */
-        min-height: 52px; /* Smaller height */
+        padding: 12px 14px;
+        min-height: 52px;
       }
       
       .rank-number {
@@ -781,7 +829,7 @@
       
       .rank-song {
         font-size: 13px;
-        padding-left: 12px; /* Reduced padding */
+        padding-left: 12px;
       }
       
       .rank-controls span {
@@ -820,35 +868,35 @@
       }
       
       #container {
-        gap: 6px; /* Very small gap */
+        gap: 6px;
         padding: 0 2px;
-        flex-direction: row; /* Keep side by side */
+        flex-direction: row;
       }
       
       #songList, #rankedColumn {
-        width: 48%; /* Keep side by side */
+        width: 48%;
         min-width: 0;
         max-width: 48%;
         margin: 0;
       }
       
       #songList {
-        height: 1200px; /* Reduced height for mobile */
-        padding: 8px; /* Minimal padding */
+        height: 1200px;
+        padding: 8px;
       }
       
       #rankedColumn {
-        padding: 8px; /* Minimal padding */
+        padding: 8px;
       }
       
       .song-item {
-        padding: 8px 10px; /* Very compact */
-        font-size: 11px; /* Smaller font */
+        padding: 8px 10px;
+        font-size: 11px;
       }
       
       .rank-box {
-        padding: 8px 10px; /* Very compact */
-        min-height: 44px; /* Smaller height */
+        padding: 8px 10px;
+        min-height: 44px;
       }
       
       .rank-number {
@@ -859,7 +907,7 @@
       
       .rank-song {
         font-size: 11px;
-        padding-left: 8px; /* Minimal padding */
+        padding-left: 8px;
       }
       
       .rank-controls span {
@@ -869,7 +917,7 @@
       }
       
       #submitBtn, #resetBtn {
-        height: 44px; /* Smaller buttons */
+        height: 44px;
         font-size: 11px;
       }
       
@@ -907,7 +955,7 @@
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) — DO NOT REMOVE -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGW77446" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End GTM (noscript) -->
 
@@ -941,18 +989,6 @@
       </div>
     </div>
   </div>
-
-    
-
-  <!-- (Optional) Manual AdSense unit — uncomment after you have a valid data-ad-slot
-  <ins class="adsbygoogle"
-       style="display:block; min-height: 280px;"
-       data-ad-client="ca-pub-2177244564929875"
-       data-ad-slot="REPLACE_WITH_YOUR_SLOT_ID"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-  -->
 
   <!-- Controls -->
   <div class="section-header">Rank With</div>
@@ -1060,7 +1096,6 @@
     const PRIOR_COUNT = 25;  // smoothing votes
     const PRIOR_AVG = 10.5;  // midpoint average rank
 
-    // NF Quotes for random display
     const NF_QUOTES = [
       "Everybody has a dark side. I feel embarrased when they see mine.",
       "The flow is so cold, you would think it was snowin'.",
@@ -1082,7 +1117,6 @@
       return NF_QUOTES[Math.floor(Math.random() * NF_QUOTES.length)];
     }
 
-    // Define the master song list once to avoid mismatches  
     const NF_SONGS = [
       "Hands Up","Only One","Thing Called Love","Just Being Me","Intro","Mansion","All I Have","Wait","Wake Up","Face It","Motivated","Notepad","Turn The Music Up","Paralyzed","I'll Keep On","Can You Hold Me",
       "Intro 2","Therapy Session","I Just Wanna Know","How Could You Leave Us","Breathe","Real","Oh Lord","I Can Feel It","Got You On My Mind","Grindin'","Wish You Wouldn't","Statement","All I Do","Lost In The Moment",
@@ -1115,10 +1149,7 @@
           if (currentMode === 'click') {
             const index = rankedSongs.indexOf(null);
             if (index !== -1) {
-              // Add floating animation
               div.classList.add('floating');
-              
-              // Add the song to ranking after animation starts
               setTimeout(() => {
                 rankedSongs[index] = song;
                 renderAll();
@@ -1198,7 +1229,6 @@
       const container = document.getElementById('dropdownContainer');
       container.innerHTML = '';
 
-      // Use the same master list as renderSongList()
       const songs = Array.from(new Set(NF_SONGS)).sort((a,b) => sortType==='alpha' ? a.localeCompare(b) : 0);
 
       for (let i = 0; i < 20; i++) {
@@ -1225,7 +1255,6 @@
         container.appendChild(select);
       }
       
-      // Add submit buttons at the end when all songs are selected
       const ready = rankedSongs.every(Boolean);
       if (ready) {
         const submitSection = document.createElement('div');
@@ -1261,7 +1290,6 @@
 
     function toggleSubmitReset() {
       const ready = rankedSongs.every(Boolean);
-      // Only show the original submit section in click mode, not dropdown mode
       const showOriginalSubmit = ready && currentMode !== 'dropdown';
       document.getElementById('submitSection').style.display = showOriginalSubmit ? 'flex' : 'none';
       if (!ready) {
@@ -1291,7 +1319,6 @@
     document.getElementById('submitBtn').onclick = () => {
       if (rankedSongs.every(Boolean)) {
         document.getElementById('submitModal').style.display = 'flex';
-        // Ensure confirmSubmit is called on Yes button
         document.querySelector('#submitModal button[onclick*="confirmSubmit(true)"]').onclick = function() {
           window.confirmSubmit(true);
         };
@@ -1304,23 +1331,18 @@
       if (rankedSongs.every(Boolean)) document.getElementById('resetModal').style.display = 'flex';
     };
 
-    // Helper to format ranked list for sharing
     function getShareText() {
       const list = Array.from(document.querySelectorAll('#myRankingsList li')).map((li, i) => `${i+1}. ${li.textContent}`);
       return `My Top 20 NF Songs\n${list.join('\n')}\n\nRank your own: https://ranksongs.com/nf_ranks.html`;
     }
 
-    // Update share buttons in results modal to share the actual list
     function updateShareLinks() {
       const text = encodeURIComponent(getShareText());
       const url = encodeURIComponent('https://ranksongs.com/nf_ranks.html');
-      // X (Twitter)
       document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${text}`;
-      // Facebook (site link only)
       document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
     }
 
-    // Copy list to clipboard for Facebook
     function copyListToClipboard() {
       const text = getShareText();
       navigator.clipboard.writeText(text).then(() => {
@@ -1338,13 +1360,11 @@
         msg.textContent = 'Copied! Paste into your Facebook post.';
         msg.style.display = 'inline-block';
         setTimeout(() => { msg.style.display = 'none'; }, 2500);
-        // Open Facebook share dialog
         const url = encodeURIComponent('https://ranksongs.com/nf_ranks.html');
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
       });
     }
 
-    // Call updateShareLinks when results modal is shown
     function showResultsModal() {
       updateShareLinks();
       document.getElementById('resultsModal').style.display = 'flex';
@@ -1354,22 +1374,19 @@
       const { data, error } = await supabaseClient.from('nf_submissions').select();
       if (error) { alert('Error fetching global rankings: ' + error.message); return []; }
 
-      // Use the same master list for consistency
       const allSongs = NF_SONGS;
 
-      // Initialize stats for all songs
       const songStats = {};
       allSongs.forEach(song => {
         songStats[song] = { totalPoints: 0, timesRanked: 0, totalRankSum: 0, weightedRankings: 0, weightedCount: 0 };
       });
 
-      const UNRANKED_WEIGHT = 0.5; // Weight for treating unranked songs as rank 0 (increased from 0.1)
-      const MIN_VOTES_FOR_LEADERBOARD = Math.max(1, Math.ceil(data.length * 0.05)); // 5% of total submissions, minimum 1
+      const UNRANKED_WEIGHT = 0.5;
+      const MIN_VOTES_FOR_LEADERBOARD = Math.max(1, Math.ceil(data.length * 0.05));
 
       data.forEach(submission => {
-        const rankedSongs = new Set();
+        const rankedSongsSet = new Set();
         
-        // First pass: collect actual rankings
         for (let i = 1; i <= 20; i++) {
           const song = submission['rank_' + i];
           if (!song) continue;
@@ -1377,28 +1394,27 @@
           songStats[song].totalPoints += 21 - i;
           songStats[song].timesRanked++;
           songStats[song].totalRankSum += i;
-          songStats[song].weightedRankings += i; // Full weight for actual rankings
+          songStats[song].weightedRankings += i;
           songStats[song].weightedCount += 1;
-          rankedSongs.add(song);
+          rankedSongsSet.add(song);
         }
         
-        // Second pass: add low-confidence negative signal for unranked songs
         allSongs.forEach(song => {
-          if (!rankedSongs.has(song)) {
-            songStats[song].weightedRankings += 21 * UNRANKED_WEIGHT; // Rank 21 (worst) with low weight
+          if (!rankedSongsSet.has(song)) {
+            songStats[song].weightedRankings += 21 * UNRANKED_WEIGHT;
             songStats[song].weightedCount += UNRANKED_WEIGHT;
           }
         });
       });
 
       const arr = Object.entries(songStats)
-        .filter(([song, stats]) => stats.timesRanked >= MIN_VOTES_FOR_LEADERBOARD) // Filter by minimum votes
+        .filter(([song, stats]) => stats.timesRanked >= MIN_VOTES_FOR_LEADERBOARD)
         .map(([song, stats]) => {
-        const avgRank = stats.timesRanked > 0 ? stats.totalRankSum / stats.timesRanked : 21; // Default to worst rank if never ranked
+        const avgRank = stats.timesRanked > 0 ? stats.totalRankSum / stats.timesRanked : 21;
         const weightedAvgRank = stats.weightedCount > 0 ? stats.weightedRankings / stats.weightedCount : 21;
         const rawScore = ((PRIOR_COUNT * PRIOR_AVG) + (stats.weightedCount * weightedAvgRank)) / (PRIOR_COUNT + stats.weightedCount);
         const weightedScore = 21 - rawScore;
-        const timesUnranked = Math.round((stats.weightedCount - stats.timesRanked) / UNRANKED_WEIGHT); // Calculate times unranked
+        const timesUnranked = Math.round((stats.weightedCount - stats.timesRanked) / UNRANKED_WEIGHT);
         return { 
           song, 
           totalPoints: stats.totalPoints, 
@@ -1440,7 +1456,6 @@
       const dataToInsert = {};
       rankedSongs.forEach((song, i) => { dataToInsert['rank_' + (i + 1)] = song; });
 
-      // Best-effort IP (optional)
       let ip = '';
       try { const res = await fetch('https://api64.ipify.org?format=json'); ip = (await res.json()).ip; } catch {}
       dataToInsert.ip_address = ip;
@@ -1448,22 +1463,18 @@
       const { error } = await supabaseClient.from('nf_submissions').insert([dataToInsert]);
       if (error) { alert('Submission error: ' + error.message); return; }
 
-      // Push event to dataLayer for GTM → GA4 (and other pixels)
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'submit_rankings', artist: 'NF', song_count: 20, top_song: rankedSongs[0] || '' });
       }
 
-      // My list
       const myList = document.getElementById('myRankingsList');
       myList.innerHTML = '';
       rankedSongs.forEach(song => { const li = document.createElement('li'); li.textContent = song; myList.appendChild(li); });
 
-      // Global
       const rankings = await fetchGlobalRankings();
       renderGlobalTable(rankings);
-      showResultsModal(); // <-- instead of direct modal display
+      showResultsModal();
 
-      // Reset
       rankedSongs = Array(20).fill(null);
       renderAll();
     };
@@ -1496,9 +1507,7 @@
     }
     window.showCalculation = showCalculation;
 
-    // Init
     document.addEventListener("DOMContentLoaded", async () => {
-      // Display random quote
       const quoteElement = document.getElementById('randomQuote');
       if (quoteElement) {
         quoteElement.textContent = getRandomQuote();
@@ -1508,7 +1517,6 @@
       updateButtons('sortByToggles', sortType);
       renderAll();
 
-      // Share link click tracking via dataLayer
       const xLink = document.getElementById('share-x');
       const fbLink = document.getElementById('share-fb');
       if (xLink) xLink.addEventListener('click', () => window.dataLayer && window.dataLayer.push({event:'share', platform:'x', artist:'NF'}));
@@ -1519,12 +1527,10 @@
           window.dataLayer && window.dataLayer.push({event:'share', platform:'facebook', artist:'NF'});
         });
       }
-      // Facebook modal buttons
       document.getElementById('fbCopyYes').onclick = function() { fbShare(true); };
       document.getElementById('fbCopyNo').onclick = function() { fbShare(false); };
     });
 
-    // Facebook share button logic
     function openFbCopyModal() {
       document.getElementById('fbCopyModal').style.display = 'flex';
     }
@@ -1550,5 +1556,14 @@
       <button onclick="document.getElementById('calcModal').style.display='none'">Close</button>
     </div>
   </div>
+
+  <footer style="text-align:center; padding:20px; margin-top:40px; font-size:13px; color:rgba(255,255,255,0.6);">
+    <a href="https://www.keybuzzdigital.com"
+       target="_blank"
+       rel="noopener"
+       style="color:#9ecbff; text-decoration:none;">
+       Site Optimization by KeyBuzz Digital
+    </a>
+  </footer>
 </body>
 </html>
